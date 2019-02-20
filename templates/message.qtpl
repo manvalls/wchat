@@ -1,0 +1,7 @@
+{% import "github.com/manvalls/wchat/types" %}
+
+{% func Message(msg types.Message) %}
+<div>
+    {%s msg.User %}: {%s msg.Message %}
+</div>
+{% endfunc %}

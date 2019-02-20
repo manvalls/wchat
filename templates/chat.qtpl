@@ -1,5 +1,11 @@
-{% func Chat() %}
-<div id="history"></div>
+{% import "github.com/manvalls/wchat/types" %}
+
+{% func Chat(messages []types.Message) %}
+<div id="messages" w-sub>
+    {% for _, msg := range messages %}
+        {%= Message(msg) %}
+    {% endfor %}
+</div>
 <form method="post">
     <input type="text" name="message" />
     <input type="submit" value="Send" />
