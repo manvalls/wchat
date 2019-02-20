@@ -1,0 +1,7 @@
+{% func Chat() %}
+<div id="history"></div>
+<form method="post">
+    <input type="text" name="message" />
+    <input type="submit" value="Send" />
+</form>
+{% endfunc %}
