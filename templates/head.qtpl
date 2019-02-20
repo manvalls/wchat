@@ -1,5 +1,5 @@
 {% func Head() %}
 <title></title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.4/css/bulma.min.css">
-<script src="https://unpkg.com/wframe" async></script>
+<script src="https://unpkg.com/wframe@1.0.2" async></script>
 {% endfunc %}

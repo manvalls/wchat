@@ -21,9 +21,6 @@ var (
 type chat struct{ wok.Default }
 
 func (c chat) Plan() wok.Plan {
-	messagesMutex.RLock()
-	defer messagesMutex.RUnlock()
-
 	return wok.List(
 		wok.Socket().Do(func(r wok.ReadOnlyRequest) {
 			chatChannel.Join(r)
@@ -47,8 +44,14 @@ func (c chat) Plan() wok.Plan {
 			)
 
 			messages = append(messages, msg)
-			return nil
+			return selectors.MessageInput.AddAttr(map[string]string{
+				"value": "",
+			})
 		}),
-		wq.Body.Set(templates.Chat(messages)),
+		wok.Run(func(r wok.Request) wit.Command {
+			messagesMutex.RLock()
+			defer messagesMutex.RUnlock()
+			return wq.Body.Set(templates.Chat(messages))
+		}),
 	)
 }
