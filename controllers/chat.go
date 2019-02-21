@@ -22,6 +22,9 @@ type chat struct{ wok.Default }
 
 func (c chat) Plan() wok.Plan {
 	return wok.List(
+		wq.Title.SetText("Chat"),
+		selectors.NavbarItems.RmClass("is-active"),
+		selectors.ChatTab.AddClass("is-active"),
 		wok.Socket().Do(func(r wok.ReadOnlyRequest) {
 			chatChannel.Join(r)
 		}),
@@ -51,7 +54,7 @@ func (c chat) Plan() wok.Plan {
 		wok.Run(func(r wok.Request) wit.Command {
 			messagesMutex.RLock()
 			defer messagesMutex.RUnlock()
-			return wq.Body.Set(templates.Chat(messages))
+			return selectors.MainContainer.Set(templates.Chat(messages))
 		}),
 	)
 }

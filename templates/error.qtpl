@@ -1,0 +1,16 @@
+{% import "github.com/manvalls/wchat/routes" %}
+
+{% func Error() %}
+<section class="hero is-danger is-fullheight is-bold">
+    <div class="hero-body">
+        <div class="container">
+            <h1 class="title">
+                404
+            </h1>
+            <a class="subtitle" href="{%s routes.Router.MustGetURL(nil, routes.MainContainer, routes.Landing) %}">
+                Go back to the landing page
+            </a>
+        </div>
+    </div>
+</section>
+{% endfunc %}

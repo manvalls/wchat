@@ -2,8 +2,12 @@ package selectors
 
 import "github.com/manvalls/wq"
 
-// Messages matches the chat messages container
-var Messages = wq.S("#messages")
-
-// MessageInput matches the message input
-var MessageInput = wq.S("input[name=message]")
+// Selectors for the app
+var (
+	MainContainer = wq.S(".container")
+	Messages      = wq.S("#messages")
+	MessageInput  = wq.S("input[name=message]")
+	ChatTab       = wq.S("#chat-tab")
+	LandingTab    = wq.S("#settings-tab")
+	NavbarItems   = wq.S(".navbar-item")
+)

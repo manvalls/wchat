@@ -20,11 +20,11 @@ func (r root) Plan() wok.Plan {
 
 func (r root) Resolve(route string) wok.Controller {
 	switch route {
-	case routes.Chat:
-		return chat{}
-	case routes.Landing:
-		return landing{}
+	case routes.MainContainer:
+		return mainContainer{}
+	case routes.Error:
+		return errorController{}
 	}
 
-	return errorController{}
+	return wok.Default{}
 }

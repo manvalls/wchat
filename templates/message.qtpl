@@ -1,7 +1,10 @@
 {% import "github.com/manvalls/wchat/types" %}
 
 {% func Message(msg types.Message) %}
-<div>
-    {%s msg.User %}: {%s msg.Message %}
-</div>
+<p>
+    <strong>{%s msg.User %}</strong>
+    <br>
+    {%s msg.Message %}
+</p>
+<w-scroll />
 {% endfunc %}

@@ -1,0 +1,29 @@
+{% import "github.com/manvalls/wchat/routes" %}
+
+{% func MainContainer() %}
+<section class="hero is-info is-fullheight">
+    <div class="hero-head">
+        <header class="navbar">
+            <div class="navbar-brand">
+                <span class="navbar-item">
+                    Chat App
+                </span>
+            </div>
+            <div class="navbar-menu">
+                <div class="navbar-end">
+                    <a id="settings-tab" class="navbar-item" href="{%s routes.Router.MustGetURL(nil, routes.MainContainer, routes.Landing) %}">
+                        Settings
+                    </a>
+                    <a id="chat-tab" class="navbar-item" href="{%s routes.Router.MustGetURL(nil, routes.MainContainer, routes.Chat) %}">
+                        Chat
+                    </a>
+                </div>
+            </div>
+        </header>
+    </div>
+    <div class="hero-body">
+        <div class="container">
+        </div>
+    </div>
+</section>
+{% endfunc %}
