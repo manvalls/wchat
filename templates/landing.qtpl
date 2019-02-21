@@ -3,7 +3,7 @@
     <div class="field">
         <label class="label">Name</label>
         <div class="control has-icons-left">
-            <input autocomplete="off" live debounce="50" class="input" type="text" name="name" placeholder="John Doe">
+            <input autocomplete="off" live debounce="200" class="input" type="text" name="name" placeholder="John Doe">
             <span class="icon is-small is-left">
                 <i class="fas fa-user"></i>
             </span>
