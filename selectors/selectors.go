@@ -13,4 +13,5 @@ var (
 	Errors        = wq.S(".error")
 	ErrorMessage  = wq.S(".error-message")
 	NameInput     = wq.S("input[name=name]")
+	Submit        = wq.S("button[type=submit]")
 )

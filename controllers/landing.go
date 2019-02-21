@@ -24,10 +24,16 @@ func (l landing) Plan() wok.Plan {
 			name := r.FormValue("name")
 
 			if name == "" {
-				return wit.List(
+				list := wit.List(
 					selectors.ErrorMessage.SetText("Name cannot be empty"),
 					selectors.NameInput.AddClass("is-danger"),
 				)
+
+				if !r.InitialLoad {
+					list.Add(selectors.Submit.AddAttr(map[string]string{"disabled": ""}))
+				}
+
+				return list
 			}
 
 			if r.IsNavigation {
@@ -39,10 +45,16 @@ func (l landing) Plan() wok.Plan {
 				r.URLRedirect(303, nil, routes.MainContainer, routes.Chat)
 			}
 
-			return wit.List(
+			list := wit.List(
 				selectors.ErrorMessage.SetText(""),
 				selectors.NameInput.RmClass("is-danger"),
 			)
+
+			if !r.InitialLoad {
+				list.Add(selectors.Submit.RmAttr("disabled"))
+			}
+
+			return list
 		}),
 	)
 }
