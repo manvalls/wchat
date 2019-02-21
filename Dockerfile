@@ -1,4 +1,4 @@
-# Titan build
+# App build
 
 FROM golang:1.11-alpine AS wchat
 RUN apk update
