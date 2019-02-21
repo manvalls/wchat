@@ -10,8 +10,8 @@ RUN go install github.com/manvalls/quicktemplate/qtc
 
 ADD . /go/src/github.com/manvalls/wchat
 WORKDIR /go/src/github.com/manvalls/wchat
-RUN go get
 RUN go generate
+RUN go get
 RUN go install --ldflags '-extldflags "-static"'
 
 # Final image
