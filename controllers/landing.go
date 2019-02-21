@@ -24,7 +24,10 @@ func (l landing) Plan() wok.Plan {
 			name := r.FormValue("name")
 
 			if name == "" {
-
+				return wit.List(
+					selectors.ErrorMessage.SetText("Name cannot be empty"),
+					selectors.NameInput.AddClass("is-danger"),
+				)
 			}
 
 			if r.IsNavigation {
@@ -36,7 +39,10 @@ func (l landing) Plan() wok.Plan {
 				r.URLRedirect(303, nil, routes.MainContainer, routes.Chat)
 			}
 
-			return nil
+			return wit.List(
+				selectors.ErrorMessage.SetText(""),
+				selectors.NameInput.RmClass("is-danger"),
+			)
 		}),
 	)
 }
