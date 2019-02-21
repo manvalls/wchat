@@ -9,15 +9,13 @@
                     Chat App
                 </span>
             </div>
-            <div class="navbar-menu">
-                <div class="navbar-end">
-                    <a id="settings-tab" class="navbar-item" href="{%s routes.Router.MustGetURL(nil, routes.MainContainer, routes.Landing) %}">
-                        Settings
-                    </a>
-                    <a id="chat-tab" class="navbar-item" href="{%s routes.Router.MustGetURL(nil, routes.MainContainer, routes.Chat) %}">
-                        Chat
-                    </a>
-                </div>
+            <div class="navbar-end">
+                <a id="settings-tab" class="navbar-item" href="{%s routes.Router.MustGetURL(nil, routes.MainContainer, routes.Landing) %}">
+                    Settings
+                </a>
+                <a id="chat-tab" class="navbar-item" href="{%s routes.Router.MustGetURL(nil, routes.MainContainer, routes.Chat) %}">
+                    Chat
+                </a>
             </div>
         </header>
     </div>

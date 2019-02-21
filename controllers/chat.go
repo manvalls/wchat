@@ -37,6 +37,10 @@ func (c chat) Plan() wok.Plan {
 				Message: r.FormValue("message"),
 			}
 
+			if msg.Message == "" {
+				return nil
+			}
+
 			userCookie, err := r.Cookie("name")
 			if err == nil {
 				msg.User = userCookie.Value

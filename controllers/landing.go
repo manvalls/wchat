@@ -21,12 +21,21 @@ func (l landing) Plan() wok.Plan {
 		selectors.LandingTab.AddClass("is-active"),
 		selectors.MainContainer.Set(templates.Landing()),
 		wok.Post().Handle(func(r wok.Request) wit.Command {
-			r.SetCookie(&http.Cookie{
-				Name:  "name",
-				Value: r.FormValue("name"),
-			})
+			name := r.FormValue("name")
 
-			r.URLRedirect(303, nil, routes.MainContainer, routes.Chat)
+			if name == "" {
+
+			}
+
+			if r.IsNavigation {
+				r.SetCookie(&http.Cookie{
+					Name:  "name",
+					Value: name,
+				})
+
+				r.URLRedirect(303, nil, routes.MainContainer, routes.Chat)
+			}
+
 			return nil
 		}),
 	)
