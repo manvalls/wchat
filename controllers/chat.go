@@ -51,6 +51,10 @@ func (c chat) Plan() wok.Plan {
 			)
 
 			messages = append(messages, msg)
+			if len(messages) > 1000 {
+				messages = messages[len(messages)-1000:]
+			}
+
 			return selectors.MessageInput.AddAttr(map[string]string{
 				"value": "",
 			})
