@@ -2,9 +2,7 @@ package controllers
 
 import (
 	"github.com/manvalls/wchat/routes"
-	"github.com/manvalls/wchat/templates"
 	"github.com/manvalls/wok"
-	"github.com/manvalls/wq"
 )
 
 // Root controller of the page
@@ -15,7 +13,7 @@ func Root() wok.Controller {
 type root struct{ wok.Default }
 
 func (r root) Plan() wok.Plan {
-	return wq.Head.Set(templates.Head())
+	return nil
 }
 
 func (r root) Resolve(route string) wok.Controller {

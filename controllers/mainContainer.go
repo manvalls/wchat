@@ -2,15 +2,13 @@ package controllers
 
 import (
 	"github.com/manvalls/wchat/routes"
-	"github.com/manvalls/wchat/templates"
 	"github.com/manvalls/wok"
-	"github.com/manvalls/wq"
 )
 
 type mainContainer struct{ wok.Default }
 
 func (m mainContainer) Plan() wok.Plan {
-	return wq.Body.Set(templates.MainContainer())
+	return nil
 }
 
 func (m mainContainer) Resolve(route string) wok.Controller {
