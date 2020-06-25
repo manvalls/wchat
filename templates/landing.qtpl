@@ -1,9 +1,9 @@
 {% func Landing() %}
-<form method="post" class="box">
+<form is="w-form" method="post" class="box">
     <div class="field">
         <label class="label">Name</label>
         <div class="control has-icons-left">
-            <input autocomplete="off" live debounce="200" class="input" type="text" name="name" placeholder="John Doe">
+            <input is="w-input" autocomplete="off" live debounce="200" class="input" type="text" name="name" placeholder="John Doe">
             <span class="icon is-small is-left">
                 <i class="fas fa-user"></i>
             </span>
@@ -14,7 +14,7 @@
 
     <div class="field is-grouped">
         <div class="control">
-            <button class="button is-link" type="submit">Submit</button>
+            <button is="w-button" class="button is-link" type="submit">Submit</button>
         </div>
     </div>
 </form>
